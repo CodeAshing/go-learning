@@ -32,6 +32,11 @@ func main(){
 		fmt.Println("Enter the number of tickets you want to buy: ")
 		fmt.Scan(&userTicket)
 
+		if userTicket > conferenceAvailableTicket {
+			fmt.Printf("Sorry we only have %d tickets available\n", conferenceAvailableTicket)
+			continue
+		}
+
 		booking = append(booking, userFirstName + " " + userLastName)
 
 		conferenceAvailableTicket = conferenceAvailableTicket - userTicket
@@ -44,7 +49,11 @@ func main(){
 			names := strings.Fields(booking)
 			firstName = append(firstName, names[0])
 		}
-
 		fmt.Printf("These are all our booking: %v\n", firstName)
+
+		if conferenceAvailableTicket == 0 {
+			fmt.Println("We are sold out")
+			break
+		}
 	}
 }

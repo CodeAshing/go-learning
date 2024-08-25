@@ -5,14 +5,14 @@ import (
 	"strings"
 )
 
-func main(){
+func main() {
 	conferenceName := "Go Conference"
 	const conferenceTicket = 50
 	var conferenceAvailableTicket uint = 50
 
 	fmt.Printf("Welcome to %s\n", conferenceName)
 	fmt.Printf("We have %d tickets available out of %d\n", conferenceAvailableTicket, conferenceTicket)
-	fmt.Println ("buy your ticket now")	 
+	fmt.Println("buy your ticket now")
 	for {
 		var userFirstName string
 		var userLastName string
@@ -37,7 +37,7 @@ func main(){
 			continue
 		}
 
-		booking = append(booking, userFirstName + " " + userLastName)
+		booking = append(booking, userFirstName+" "+userLastName)
 
 		conferenceAvailableTicket = conferenceAvailableTicket - userTicket
 
